@@ -1,0 +1,51 @@
+
+<h1>DETAILS DU DEVICE</h1>
+<a href="#!/devices">retour</a>
+<div class="row">
+  <div class="col-md-4">
+    <div class="myDevice bg-success text-white" id="myDevice">
+      <span>Identifiant : </span> {{monDevice.id}} <br>
+      <span>Nom : </span> {{monDevice.name}} <br>
+      <span>Dernière adresse IP : </span> {{monDevice.last_ip_address}} <br>
+      <span>Id produit : </span> {{monDevice.product_id}} <br>
+      <span>Id plateforme : </span> {{monDevice.platform_id}} <br>
+      <span>Connecté : </span> {{monDevice.connected}} <br>
+      <span>Cellular : </span> {{monDevice.cellular}} <br>
+      <span>Status : </span> {{monDevice.status}} <br>
+      <span>Notes : </span> {{monDevice.notes}} <br>
+      <span>Dernière utilisation :</span> {{monDevice.last_heard}} <br>
+    </div>
+    <hr>
+    <div>
+    <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
+            chart-series="series" chart-click="onClick"></canvas>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <leaflet markers="markers" center="metz" width="100%" height="480px"></leaflet>
+    <div>
+      <table class="table is-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+          <th scope="col">data</th>
+          <th scope="col">published_at</th>
+          <th scope="col">coreid</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="s in mesSensors" class="table-warning">
+          <th scope="row">{{$index}}</th>
+          <td>{{s.name}}</td>
+          <td>{{s.data}}</td>
+          <td>{{s.published_at| date : 'dd-MM-yy HH:mm:ss ' }}</td>
+          <td>{{s.coreid}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

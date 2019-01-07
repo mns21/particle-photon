@@ -1,0 +1,16 @@
+
+
+<h1>LED</h1>
+		
+		<form name="myForm">
+			<label>
+				<input type="radio" ng-model="ordre.valeur" value="on">
+				Allumer la lumière
+			</label><br/>
+			<label>
+				<input type="radio" ng-model="ordre.valeur" value="off">
+				Éteindre la lumière
+			</label><br/>
+		</form>
+		
+		<button class="btn btn-primary" ng-click="myLed()">Valider</button>

@@ -1,0 +1,11 @@
+<h1>DEVICES</h1>
+
+<div style="margin-top:200px" class="alert alert-info">
+        <ul class="list-group-item">
+            <li class="collection-item list-group-item-success" ng-repeat="d in listeDevices" style="cursor: pointer;list-style-type: none">
+                <a ng-href="#!/devices/{{d._id}}">
+                <h5>Nom : {{d.name}}</h5>
+                <p>Id : {{d.id}}</p>
+            </li>
+        </ul>
+</div>
